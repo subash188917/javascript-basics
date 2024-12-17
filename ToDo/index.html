@@ -1,0 +1,154 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+</head>
+<body>
+    <h2>ToDo List</h2>
+    <ul id="todoList"></ul>
+  <div>  
+    <input id="addTask" type="text">
+    <button id="submit">Add Task</button>
+</div>
+<h3>Completed</h3>
+<ul id="doneList"></ul>
+
+</body>
+<script>
+    let submit=document.getElementById('submit');
+    let addTask=document.getElementById('addTask');
+    let todoList = document.getElementById('todoList');
+    let doneList = document.getElementById('doneList');
+    let list = new Array();
+
+    submit.addEventListener('click', (event)=>{
+        if (addTask.value != ''){
+        list.push(addTask.value);
+        todoList.innerHTML += '<li id="+(list.length-1)+"><button onclick="complete('+(list.length-1)+')">'+addTask.value+'</button></li>'
+        addTask.value='';
+        }
+    });
+
+    function complete(id){
+        doneList.innerHTML='<li>'+list[id]+'</li>';
+        document.getElementById(id).style.display="none";
+    }
+</script>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo</title>
+</head>
+<body>
+    <h2>ToDo List</h2>
+    <ul id="todoList"></ul>
+    <div>
+        <input id="addTask" type="text" placeholder="Enter task">
+        <button id="submit">Add Task</button>
+    </div>
+    <h3>Completed</h3>
+    <ul id="doneList"></ul>
+
+    <script>
+        let submit = document.getElementById('submit');
+        let addTask = document.getElementById('addTask');
+        let todoList = document.getElementById('todoList');
+        let doneList = document.getElementById('doneList');
+        let list = [];
+
+        // Add Task Event
+        submit.addEventListener('click', () => {
+            if (addTask.value.trim() !== '') {
+                const task = addTask.value.trim();
+                const taskId = list.length; // Use list length as unique ID
+                list.push(task);
+
+                // Create new list item
+                const li = document.createElement('li');
+                li.id = `task-${taskId}`;
+                li.innerHTML = `
+                    <span>${task}</span>
+                    <button class="completeBtn">Complete</button>
+                `;
+
+                // Add event listener to the "Complete" button
+                li.querySelector('.completeBtn').add -->
+                <!DOCTYPE html>
+                <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>ToDo</title>
+                </head>
+                <body>
+                    <h2>ToDo List</h2>
+                    <ul id="todoList"></ul>
+                    <div>
+                        <input id="addTask" type="text" placeholder="Enter a task">
+                        <button id="submit">Add Task</button>
+                    </div>
+                    <h3>Completed</h3>
+                    <ul id="doneList"></ul>
+                
+                    <script>
+                        // Get references to HTML elements
+                        const submit = document.getElementById('submit');
+                        const addTask = document.getElementById('addTask');
+                        const todoList = document.getElementById('todoList');
+                        const doneList = document.getElementById('doneList');
+                
+                        // Array to store tasks
+                        const tasks = [];
+                
+                        // Add task to the to-do list
+                        submit.addEventListener('click', () => {
+                            const taskValue = addTask.value.trim();
+                
+                            if (taskValue !== '') {
+                                // Add task to array and display in the list
+                                const taskId = tasks.length;
+                                tasks.push(taskValue);
+                
+                                // Create list item
+                                const li = document.createElement('li');
+                                li.id = `task-${taskId}`;
+                                li.innerHTML = `
+                                    <span>${taskValue}</span>
+                                    <button class="completeBtn">Complete</button>
+                                `;
+                
+                                // Add event listener for the "Complete" button
+                                li.querySelector('.completeBtn').addEventListener('click', () => completeTask(taskId));
+                
+                                // Append list item to the to-do list
+                                todoList.appendChild(li);
+                
+                                // Clear input
+                                addTask.value = '';
+                            }
+                        });
+                
+                        // Function to complete a task
+                        function completeTask(taskId) {
+                            const taskText = tasks[taskId];
+                
+                            // Create a completed task list item
+                            const li = document.createElement('li');
+                            li.textContent = taskText;
+                            doneList.appendChild(li);
+                
+                            // Hide the task from the to-do list
+                            const taskItem = document.getElementById(`task-${taskId}`);
+                            if (taskItem) {
+                                taskItem.style.display = 'none';
+                            }
+                        }
+                    </script>
+                </body>
+                </html>
+                

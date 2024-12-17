@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal Dialog Boxes</title>
+</head>
+<body>
+</body>
+<script>
+    alert("This is an alert!");
+
+    let name = prompt('What is your name?', 'Anonymous'); // Prompt to enter a name
+    if (name !== null) { // Check if the user did not cancel
+        let outcome = confirm(`Is your name ${name}?`); // Confirmation with the entered name
+        console.log(outcome); // Log the user's response (true/false)
+    }
+</script>
+</html>

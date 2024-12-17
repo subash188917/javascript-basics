@@ -1,0 +1,61 @@
+<!-- <html>
+    <head>
+        <body>
+            <p>HI</p>
+            <p>HELLO</p>
+        </body>
+        <script>
+            console.log("This is TECH4 WAY");
+
+            console.log("Subash Madhavan"); //Excersise
+        </script>
+    </head>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="head">Subash</h1>
+    <div id="box"></div>
+</body>
+<script>
+    let element = document.getElementById('box');
+    element.innerHTML='<p>Hi HI HI...</p>';
+    console.log(element.textContent);
+</script>
+</html> -->
+
+<!-- Event listener -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="sj">1</button>
+</body>
+<script>
+    let btn = document.getElementById('sj');
+
+    document.addEventListener('keydown',(event)=>{
+        console.log(event.key);
+        switch(event.key){
+            case 'ArrowUp':
+                btn.textContent=Number(btn.textContent)+1;
+                break;
+            case 'ArrowDown':
+                btn.textContent=Number(btn.textContent)-1;
+                break;
+
+        }
+    });
+</script>
+</html>
